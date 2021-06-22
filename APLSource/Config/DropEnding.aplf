@@ -1,0 +1,6 @@
+ DropEnding←{
+⍝ Drop ⍺ from ⍵ if ⍵ ends in ⍺
+     n←-≢⍺
+     b←⍺≡n↑⍵
+     (b×n)↓⍵
+ }

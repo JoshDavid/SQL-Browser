@@ -2,3 +2,4 @@ aplcore
 .acre/
 dist/
 Assets/Runtime/LocallyDerived/
+config.json

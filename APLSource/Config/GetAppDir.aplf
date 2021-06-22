@@ -1,12 +1,11 @@
  GetAppDir←{
- ⍝ TODO: Figure out how if this will work with DADO
      isWorkspace←'CLEAR WS'≢⎕WSID
      isWorkspace:WorkspaceDirectory''
-     isAcre←0≠⎕NC'#.AcreConfig'
-     isAcre:#.AcreConfig.ProjectFolder
-     r←FindLinkedDir ##.AppName''
+     isDado←0≠⎕NC'##.AcreConfig'
+     isDado:##.AcreConfig.ProjectFolder
+     r←'/APLSource'DropEnding FindLinkedDir ##.AppName''
      r≢'':r
      msg←'Unable to find directory where the app config file should reside.'
      msg,←' Please enter a valid folder location:'
-     ##.GUI.TextPrompt⊂msg
+     ⊃##.GUI.TextPrompt⊂msg
  }
