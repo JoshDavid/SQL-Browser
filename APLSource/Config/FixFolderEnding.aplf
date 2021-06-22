@@ -1,0 +1,10 @@
+ FixFolderEnding←{
+ ⍝ ⍵ ←→ FOLDER path, with or without an ending slash
+ ⍝ ← ←→ folder path normalized with an ending slash
+     ⎕IO←0
+     Normalize←{⊃,/1 ⎕NPARTS ⍵}
+     n←Normalize ⍵
+     e←⊃⌽n
+     s←'/'
+     n,(e=s)⊃s''
+ }

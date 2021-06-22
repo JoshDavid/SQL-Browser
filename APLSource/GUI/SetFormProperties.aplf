@@ -1,0 +1,26 @@
+ SetFormProperties←{
+     MakeNS←{⍺←⎕THIS ⋄ ⍎⍵ ⍺.⎕NS''}
+     fs←MakeNS'formSettings'
+     exp←fs MakeNS'explorer'
+     session←fs MakeNS'session'
+     out←fs MakeNS'output'
+     fs.Config←##.Config.LoadConfigFile''
+     _←##.DB.Init''
+
+     exp.yPosn←0
+     exp.xPosn←0
+     exp.ySize←100
+     exp.xSize←30
+
+     session.yPosn←0
+     session.xPosn←exp.xSize
+     session.ySize←60
+     session.xSize←100-exp.xSize
+
+     out.yPosn←session.ySize
+     out.xPosn←exp.xSize
+     out.ySize←100-session.ySize
+     out.xSize←100-exp.xSize
+
+     formSettings
+ }

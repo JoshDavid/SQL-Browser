@@ -1,0 +1,14 @@
+ MakeOutputGrid←{
+⍝ ⍵ ←→ main form
+⍝ ⍺ ←→ form settings
+⍝ ← ←→ Ref to output obj
+     output←⍎'output'⍵.⎕WC'Subform'('Border' 1)
+     output.Posn←⍺.(yPosn xPosn)
+     output.Size←⍺.(ySize xSize)
+
+     grid←⍎'grid'output.⎕WC'Grid'('Border' 1)
+     _←Fullsize grid
+     grid.GridLineWidth←2
+     grid.(ResizeCols ResizeColTitles ResizeRowTitles)←1
+     output
+ }

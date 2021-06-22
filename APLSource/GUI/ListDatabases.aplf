@@ -1,0 +1,7 @@
+ ListDatabases←{
+ ⍝ ⍵ ←→ config obj
+ ⍝ ⍺ ←→ form
+     noneFound←0∊⍴⍵.Databases
+     noneFound:1↑⍵ ##.Config.AddDatabase ⍺
+     ⍵.Databases.ConnectionName
+ }

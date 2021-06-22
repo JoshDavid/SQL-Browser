@@ -1,0 +1,9 @@
+ GetColumns←{
+ ⍝ ⍵ ←→ (Schema) (Table)
+ ⍝ ⍺ ←→ Connection
+ ⍝ ← ←→ Columns of that table with their datatype
+     schema table←⍵
+     r←2⊃##.SQA.Columns ⍺ table'' ''schema
+     c←r[1;]⍳'COLUMN_NAME' 'TYPE_NAME'
+     {⊃,/⍺' ('⍵')'}/1↓r[;c]
+ }

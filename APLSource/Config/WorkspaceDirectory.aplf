@@ -1,0 +1,3 @@
+ WorkspaceDirectory←{
+     ⊃1 ⎕NPARTS ⎕WSID
+ }

@@ -1,0 +1,6 @@
+ Decrypt←{
+⍝ ⍵ ←→ Byte array of encrypted data
+⍝ ← ←→ Decrypted text
+     ⎕USING←'System.Security.Cryptography,System.Security.dll'
+     UTF8 ProtectedData.Unprotect ⍵ ⍬ DataProtectionScope.CurrentUser
+ }

@@ -1,0 +1,10 @@
+ InitFile←{
+⍝ ⍵ ←→ file name
+     tie←⍵ ⎕NCREATE 0
+     ns←⎕NS''
+     ns.SaveSettings←0
+     ns.Databases←''
+     json←⎕JSON(⍠'Compact' 0)ns
+     _←json ⎕NREPLACE tie ¯1
+     ⎕NUNTIE tie
+ }

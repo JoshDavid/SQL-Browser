@@ -1,0 +1,8 @@
+ GetParentForm←{
+⍝ ⍵ ←→ GUI obj
+⍝ ← ←→ Ref to parent form. 0 if none found
+     t←⍵.⎕WG'Type'
+     i←'Form' 'Root'∊⊂t
+     1∊i:(⍸i)⊃⍵ 0
+     ∇ ⍵.##
+ }

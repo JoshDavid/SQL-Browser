@@ -1,0 +1,13 @@
+ AddDatabase←{
+ ⍝ REVSISIT: Having issues forcing the HTML page to the front
+ ⍝ For now, hide the main GUI. But this is bad design.
+ ⍝ ⍺ ←→ config obj
+     f←##.GUI.GetParentForm⊃⍵
+     f.Visible←0
+     p←('Title' 'Add new database')('Size' 65 30)
+     dbInfo←p ##.GUI.TextPrompt'Connection Name' 'DSN' 'Username' 'Password' 'Connection Options'
+     f.Visible←1
+     ¯1≡dbInfo:''
+     _←⍺ SaveDatabaseSettings dbInfo
+     dbInfo
+ }

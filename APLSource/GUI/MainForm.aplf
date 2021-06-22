@@ -1,0 +1,6 @@
+ MainForm←{
+ ⍝ ⍵ ←→ form name
+     0::##.##.EasyGUI.UserFunctions.NotifyError(⍕¯1↓⎕DM)
+     f←MakeMainForm ⍵
+     ⎕DQ f
+ }

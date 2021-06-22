@@ -1,0 +1,9 @@
+ TextPrompt←{
+⍝ ⍵ ←→ msg
+⍝ ⍺ ←→ Attributes
+     ⍺←''
+     uf←##.##.EasyGUI.UserFunctions
+     p←uf.specifyParams ⍺
+     p.Theme←uf.##.Themes.LightGrey
+     p uf.PromptTextInput ⍵
+ }

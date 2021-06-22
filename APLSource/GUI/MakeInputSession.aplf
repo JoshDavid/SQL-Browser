@@ -1,0 +1,39 @@
+ MakeInputSession←{
+ ⍝ ⍺ ←→ form settings
+ ⍝ ⍵ ←→ main form
+ ⍝ ← ←→ Ref to session subform
+     ⍝tc←⍺.##.Config MakeTabControl ⍵
+     tc←⍎'TabControl'⍵.⎕WC'TabControl'
+     tc.Posn←⍺.(yPosn xPosn)
+     tc.Size←⍺.(ySize xSize)
+     session←⍎'session'tc.⎕WC'Subform'('Border' 1)
+     session.TabObj←tc
+
+     edit←⍎'edit'session.⎕WC'RichEdit'('VScroll' ¯1)('Attach'('Top' 'Left' 'Bottom' 'Right'))('Border' 1)
+     edit.Posn←0 0
+     editSize←90
+     edit.Size←editSize 100
+     edit.Active←0
+     edit.Text←'Double click a connection in the tree explorer to connect.'
+
+     MakeButton←{⍎⍺ session.⎕WC'Button'⍵('Attach' 'Bottom' 'None' 'Bottom' 'None')}
+     runBtn←'run'MakeButton'Run'
+     runBtn.Posn←editSize 0
+     runBtnXsize←10
+     runBtn.Size←(100-editSize)runBtnXsize
+     runBtn.onSelect←'##.DB.RunQuery'
+
+     LF←⎕UCS 10
+     toWsBtn←'toWS'MakeButton'Save to',LF,'WS'
+     toWsBtn.Posn←editSize runBtnXsize
+     toWsBtn.Size←(100-editSize)runBtnXsize
+     toWsBtn.onSelect←'##.Output.SaveToWs'
+     toWsBtn.Tip←'Saves displayed output as a matrix to Output.Result'
+
+     popoutBtn←'popout'MakeButton'⛶'
+     popoutBtn.Size←(100-editSize)5
+     popoutBtn.Posn←editSize(100-5)
+     popoutBtn.onSelect←'GridPopout'
+     popoutBtn.FontObj←SetPopoutBtnFont''
+     tc
+ }

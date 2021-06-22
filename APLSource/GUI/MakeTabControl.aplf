@@ -1,0 +1,7 @@
+ MakeTabControl←{
+ ⍝ ⍵ ←→ form
+ ⍝ ⍺ ←→ config
+     t←⍎'tc'⍵.⎕WC'TabControl'
+     ⍝_←t∘{⍵ ⍺.⎕WC'TabButton'⍵}¨⍺.Databases.ConnectionName
+     t
+ }

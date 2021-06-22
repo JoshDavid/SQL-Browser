@@ -1,0 +1,13 @@
+ SaveDatabaseSettings←{
+⍝ ⍺ ←→ config object
+⍝ ⍵ ←→ db info
+     con dsn user pass opts←⍵
+     db←⎕NS''
+     db.ConnectionName←con
+     db.DSN←dsn
+     db.Username←user
+     db.Password←Encrypt pass
+     db.Options←opts
+     ⍺.Databases,←db
+     ⍺ UpdateConfigFile GetConfigFileName''
+ }

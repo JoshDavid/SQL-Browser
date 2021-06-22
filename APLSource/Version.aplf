@@ -1,0 +1,4 @@
+ Version←{
+    ⍝'0.0.2' ⍝ Fix EG references
+     '0.0.3' ⍝ Tweak font style
+ }

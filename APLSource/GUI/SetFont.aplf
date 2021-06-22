@@ -1,0 +1,8 @@
+ SetFont←{
+ ⍝ Make font in form so it is cleaned on form exit
+ ⍝ ⍵ ←→ main form
+     font←⍎'Font'⍵.⎕WC'Font'('PName' 'Segoe UI')('Coord' 'ScaledPixel')
+     font.Fixed←0
+     font.Size←25
+     font
+ }

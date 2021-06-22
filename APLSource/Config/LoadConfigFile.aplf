@@ -1,0 +1,5 @@
+ LoadConfigFile←{
+     file←GetConfigFileName''
+     _←{~⎕NEXISTS ⍵:InitFile ⍵ ⋄ 0}file
+     ReadConfigFile file
+ }

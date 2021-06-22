@@ -1,0 +1,9 @@
+ GetAllColNames←{
+⍝ ⍵ ←→ ?
+⍝ will need to figure out how to handle joins..
+⍝ for now deal with simple case
+     name←⊃('(?i)FROM\s+(\S+)'⎕S'\1')⍵
+     schema table←##.Utils.deb ¯2↑⍬,'.'(≠⊆⊢)name
+     r←##.SQA.Columns CurrentConnection table'' ''schema
+     {1↓⍵[;⍵[1;]⍳⊂'COLUMN_NAME']}2⊃r
+ }

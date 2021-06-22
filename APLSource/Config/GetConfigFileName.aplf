@@ -1,0 +1,5 @@
+ GetConfigFileName←{
+⍝ ← ←→ full path to file
+     dir←FixFolderEnding GetAppDir''
+     dir,'config.json'
+ }

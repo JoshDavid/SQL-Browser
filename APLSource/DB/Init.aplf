@@ -1,0 +1,4 @@
+ Init←{
+     _←LoadSQAPL''
+     ##.SQA.Init''
+ }

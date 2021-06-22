@@ -1,0 +1,8 @@
+ LoadSQAPL←{
+     isLoaded←9=⎕NC'##.SQA'
+     isLoaded:0
+     Copy←{'SQA'##.⎕CY ⍵}
+     err←⊂'Cannot find SQAPL workspace. Please enter the full path to the workspace:'
+     11::Copy(⊃('Size' 23 30)##.GUI.TextPrompt err)~'"'
+     Copy'sqapl'
+ }

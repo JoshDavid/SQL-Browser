@@ -1,0 +1,14 @@
+ RunQuery←{
+⍝ When the Run button is pressed
+     session←(⊃⍵).##
+     query←⊃{⍺,' ',⍵}/(session.edit.Text)
+     headers←ExtractHeaders query
+     r←##.SQA.Do CurrentConnection query
+     dbError←0≠⊃r
+     dbError:DisplayOdbcError r
+     table←⊃3⊃r
+     grid←session.##.##.output.grid ⍝ REVISIT, create ParentForm fn
+     grid.ColTitles←headers
+     grid.Values←table
+     ##.GUI.AutoSizeCols grid
+ }

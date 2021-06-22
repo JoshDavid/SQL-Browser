@@ -1,0 +1,12 @@
+ MakeTreeView←{
+ ⍝ ⍵ ←→ ref to explorer subform
+ ⍝ ⍺ ←→ config settings
+     f←⍵.##
+     connections←f ListDatabases ⍺
+     tree←⍎'tree'⍵.⎕WC'TreeView'('Size' 100 100)('Posn' 0 0)('Attach' 'Top' 'Left' 'Bottom' 'Right')
+     depths←(≢connections)⍴0
+     tree.Items←connections
+     tree.Depth←depths
+     tree.onMouseDblClick←'OnTreeItemDblClick'⍺
+     ⍵
+ }

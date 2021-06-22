@@ -1,0 +1,5 @@
+ AutoSizeCols←{
+ ⍝ ⍵ ←→ grid object
+     nCols←⍴⍵.ColTitles
+     ⍵{⍺.SetColSize ⍵ ¯3}¨¯1,⍳nCols
+ }

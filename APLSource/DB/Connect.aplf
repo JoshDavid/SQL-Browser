@@ -1,0 +1,12 @@
+ Connect←{
+ ⍝ ⍵ ←→ Connection name -- this will be the key in the config file
+ ⍝ ⍺ ←→ config obj
+     c t←⍺
+     status←⊃##.SQA.Describe ⍵
+     isConnected←status≠1
+     isConnected:status
+     p←c ##.Config.GetConnectionParameters ⍵
+     status←##.SQA.Connect p
+     0≠⊃status:DisplayOdbcError status
+     t ##.GUI.AddConnectionTab ⍵
+ }

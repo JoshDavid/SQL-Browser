@@ -1,0 +1,11 @@
+ DisplayOdbcError←{
+⍝ Using the EasyGUI library
+⍝ ⍵ ←→ ODBC error message
+     eg←##.##.EasyGUI.UserFunctions
+     p←eg.specifyParams''
+     p.Title←'ODBC Error'
+     p.Size←30 50
+     msg←3⊃⍵
+     _←p eg.NotifyError msg
+     ¯1
+ }

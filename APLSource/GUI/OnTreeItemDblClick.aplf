@@ -1,0 +1,12 @@
+ OnTreeItemDblClick←{
+⍝ ⍵ ←→ event args
+⍝ ⍺ ←→ config obj
+     t←⊃⍵
+     i←⍸t.SelItems
+     nothingSelected←0∊⍴i
+     nothingSelected:''
+     item depth←i⊃¨t.(Items Depth)
+     i HasChildren t.Depth:''
+     depth=0:item ExpandDatabase t ⍺
+     depth=2:item ExpandTable t
+ }

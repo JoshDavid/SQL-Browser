@@ -1,0 +1,19 @@
+ AddConnectionTab←{
+ ⍝ ⍵ ←→ TabName (Connection name)
+ ⍝ ⍺ ←→ TabControl object
+     f←GetParentForm ⍺
+     tc←f.TabControl
+     isFirstAddition←1=≢tc.⎕WN''
+     tb←⍎⍵ tc.⎕WC'TabButton'⍵
+     _←isFirstAddition{
+         ~⍺:0
+         e←⍵.##.session.edit
+         e.Active←1
+         e.Text←''
+         ##.DB.CurrentConnection←⍵.Caption
+         0
+     }tb
+     tb.Data←''
+     tb.onSelect←'OnTabClick'tb
+     ⎕NQ tb'Select'
+ }

@@ -1,0 +1,8 @@
+ SetPopoutBtnFont←{
+ ⍝ ⍵ ←→ main form
+     font←⍎'pbtnFont'⎕WC'Font'('PName' 'Segoe')('Coord' 'ScaledPixel')
+     font.Fixed←0
+     font.Size←40
+     font.Weight←0
+     font
+ }

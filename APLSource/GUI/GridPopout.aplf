@@ -1,0 +1,21 @@
+ GridPopout←{
+⍝ Display the grid in a poped out form so they can view it
+     f←GetParentForm⊃⍵
+     mainGrid←f.output.grid
+     formChildren←f.⎕WN''
+     prefix←'Popout'
+     n←+/formChildren ##.Utils.StartsWith prefix
+     newFormName←prefix,⍕n
+     pf←⍎newFormName f.⎕WC'Form'
+     pf.FontObj←f.Font ⍝ Safe to assume that Font is created at this point
+     session←f.TabControl.session
+     pf.Caption←∊session.edit.Text
+
+     popoutGrid←⍎'OutputGrid'pf.⎕WC'Grid'
+     _←Fullsize popoutGrid
+     popoutGrid.Values←mainGrid.Values
+     popoutGrid.ColTitles←mainGrid.ColTitles
+     popoutGrid.GridLineWidth←2
+     popoutGrid.(ResizeCols ResizeColTitles ResizeRowTitles)←1
+     AutoSizeCols popoutGrid
+ }

@@ -1,0 +1,10 @@
+ FindLinkedDir←{
+⍝ ⍵ ←→ App (folder) name
+⍝ ← ←→ Linked directory. Empty string if not found
+     l←⎕SE.Link.List''
+     2≠⍴⍴l:''
+     c←(,1↑l)⍳⊂'Directory'
+     d←1↓l[;c]
+     i←((-≢⍵)↑¨d)⍳⊂⍵
+     i⊃d,⊂''
+ }

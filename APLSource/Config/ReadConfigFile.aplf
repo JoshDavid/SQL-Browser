@@ -1,0 +1,4 @@
+ ReadConfigFile←{
+⍝ ⍵ ←→ File
+     ⎕JSON⊃⎕NGET ⍵
+ }

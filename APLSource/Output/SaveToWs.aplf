@@ -1,0 +1,5 @@
+ SaveToWs←{
+ ⍝ Callback function to store results into a variable
+     grid←(##.GUI.GetParentForm⊃⍵).output.grid
+     ⎕THIS.Result←⊃⍪/grid.(ColTitles Values)
+ }

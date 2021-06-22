@@ -1,0 +1,11 @@
+ OnTabClick←{
+ ⍝ Callback for when a tab is selected
+     new←⊃⍵
+     tc←new.##
+     cur←tc⍎##.DB.CurrentConnection
+     ⍝ ↓ More efficient than live lookup on "Run", but now we are in the business of saving state
+     ##.DB.CurrentConnection←new.Caption
+     e←new.##.session.edit
+     cur.Data←e.Text
+     e.Text←new.Data
+ }

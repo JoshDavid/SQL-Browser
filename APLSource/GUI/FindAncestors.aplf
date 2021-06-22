@@ -1,0 +1,9 @@
+ FindAncestors←{
+⍝ Much faster than recursively applying the "GetParentItem" native method
+⍝ ⍺ ←→ Number of (first) ancestors to find
+⍝ ⍵ ←→ Numeric depth vector
+⍝ ← ←→ Index in ⍵
+     ⎕IO←0
+     c←⊃⌽⍵
+     (≢⍵)-(⌽⍵)⍳(-⍺)↑⍳c
+ }

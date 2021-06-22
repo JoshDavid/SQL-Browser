@@ -1,0 +1,3 @@
+ {R}←Run
+ GUI.MainForm&'F'⍝ Launches application
+ R←0

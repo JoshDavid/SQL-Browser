@@ -1,0 +1,8 @@
+ MakeMenu←{
+ ⍝ ⍺ ←→ config obj
+ ⍝ ⍵ ←→ form
+     mb←⍎'mb'⍵.⎕WC'MenuBar'
+     addDB←⍎'addDB'mb.⎕WC'MenuItem' 'Add Database'
+     addDB.onSelect←'##.Config.AddDatabase&'⍺
+     0
+ }

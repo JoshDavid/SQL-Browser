@@ -1,0 +1,18 @@
+ MakeMainForm←{
+ ⍝ ⍵ ←→ Form name
+     p←SetFormProperties''
+     f←⍎⍵ ⎕WC'Form'('Coord' 'Prop')('Size' 85 85)
+     f.Visible←0
+     f.onClose←'OnFormClose'p.Config
+     f.Caption←'SQL Browser'
+     f.FontObj←SetFont f
+     f.TipObj←SetTips f
+     _←p.Config MakeMenu f
+     e←p.explorer MakeTableExplorer f
+     s←p.session MakeInputSession f
+     _←'s1'MakeSplitter f e s'Vert'
+     o←p.output MakeOutputGrid f
+     _←'s2'MakeSplitter f s o'Horz'
+     f.Visible←1
+     f
+ }

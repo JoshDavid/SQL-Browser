@@ -1,0 +1,9 @@
+ MakeSplitter←{
+⍝ ⍵ ←→ form, obj1, obj2, style
+⍝ ⍺ ←→ name of split
+     form s1 s2 style←⍵
+     oldPos←GetX s2.Posn
+     splitter←⍎⍺ form.⎕WC'Splitter's1 s2('Style'style)
+     (⊃⌽splitter.Posn)←oldPos  ⍝ REVSISIT, shouldn't have to do this
+     splitter
+ }

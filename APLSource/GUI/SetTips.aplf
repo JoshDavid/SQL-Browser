@@ -1,0 +1,6 @@
+ SetTips←{
+⍝ Used for form hints on hovering over objects
+⍝ ⍵ ←→ form
+⍝ ← ←→ TipField object
+     ⍎((⍕⍵),'.TipField')⎕WC'TipField'
+ }

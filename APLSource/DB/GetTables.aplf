@@ -1,0 +1,6 @@
+ GetTables←{
+ ⍝ ⍵ ←→ Connection Name
+ ⍝ ← Returns a mat where cols are Schema and Table
+     t←2⊃##.SQA.Tables ⍵
+     1↓t[;2 3]
+ }

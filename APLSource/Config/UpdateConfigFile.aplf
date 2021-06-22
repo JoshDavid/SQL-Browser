@@ -1,0 +1,8 @@
+ UpdateConfigFile←{
+⍝ ⍵ ←→ file name
+⍝ ⍺ ←→ db settings
+⍝ TODO: Just overwrite for POC
+⍝ Allow this to modify file without overwriting everything
+     json←⎕JSON(⍠'Compact' 0)⍺
+     json ⎕NPUT ⍵ 1
+ }

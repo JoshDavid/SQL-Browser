@@ -1,0 +1,7 @@
+ GetConnectionParameters←{
+⍝ ⍵ ←→ config item key (Connection name)
+⍝ ⍺ ←→ config object
+     i←⍺.Databases.ConnectionName⍳⊆⍵
+     obj←⍺.Databases[i]
+     ⊂∘Decrypt∘⊃(@3)obj.(ConnectionName DSN Password Username Options)
+ }

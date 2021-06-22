@@ -1,0 +1,10 @@
+ PromptForDBInfo←{
+⍝ Get required fields to make a DB Connection
+     uf←##.##.EasyGUI.UserFunctions
+     ⍝ Checkbox to save config file to disk ?
+     p←uf.specifyParams'Title' 'Add new database'
+     p.Theme←uf.##.Themes.LightGrey
+     p.Size←45 30
+     f←'Connection Name' 'DSN' 'Username' 'Password' 'Connection Options'
+     p uf.PromptTextInput f
+ }

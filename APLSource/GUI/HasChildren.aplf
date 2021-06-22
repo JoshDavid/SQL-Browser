@@ -1,0 +1,7 @@
+ HasChildren←{
+⍝ ⍺ ←→ current index
+⍝ ⍵ ←→ tree depth vector
+⍝ ← ←→ 0 or 1
+     d←⍺⊃⍵
+     d<(⍵,0)[1+⍺] ⍝ add 0 at end if clicked item is last in list
+ }

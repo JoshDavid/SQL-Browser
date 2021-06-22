@@ -1,0 +1,9 @@
+ MakeTableExplorer←{
+ ⍝ ⍺ ←→ form settings
+ ⍝ ⍵ ←→ Form
+ ⍝ ← ←→ Ref to explorer subform
+     e←⍎'explorer'⍵.⎕WC'SubForm'('Border' 1)('EdgeStyle' 'Plinth')
+     e.Posn←⍺.(yPosn xPosn)
+     e.Size←⍺.(ySize xSize)
+     ⍺.##.Config MakeTreeView e
+ }

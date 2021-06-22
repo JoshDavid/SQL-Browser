@@ -1,0 +1,7 @@
+ OnFormClose←{
+ ⍝ Close DB Connection
+     f←⊃⍵
+     _←f.Close
+     _←{0::0 ⋄ ##.SQA.Close ⍵}¨⍺.Databases.ConnectionName
+     0
+ }

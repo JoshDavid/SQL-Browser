@@ -1,0 +1,14 @@
+ ExpandTable←{
+ ⍝ Find columns if a table was double clicked
+     t←⊃⍵
+     b←t.SelItems
+     i←⍸b
+     d←i⊃t.Depth
+     tableDepth←2
+     d≢tableDepth:0
+     table←i⊃t.Items
+     con schema←t.Items[2 FindAncestors i↑t.Depth]
+     cols←con ##.DB.GetColumns schema table
+     newD←(≢cols)⍴0
+     t.AddChildren i cols newD
+ }

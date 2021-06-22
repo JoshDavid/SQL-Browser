@@ -1,0 +1,6 @@
+ Fullsize←{
+⍝ ⍵ ←→ GUI object
+     ⍵.Posn←0 0
+     ⍵.Size←100 100
+     0
+ }

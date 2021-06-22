@@ -1,0 +1,8 @@
+ Encrypt←{
+⍝ ⍵ ←→ Text to encrypt
+⍝ ← ←→ Byte array of encrypted data
+⍝ This uses the Windows DPAPI services
+⍝ Hence, the key generated is tied to the user and can't be Decrypted on another machine
+     ⎕USING←'System.Security.Cryptography,System.Security.dll'
+     ProtectedData.Protect(UTF8 ⍵)⍬ DataProtectionScope.CurrentUser
+ }

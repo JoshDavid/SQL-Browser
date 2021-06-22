@@ -1,0 +1,6 @@
+ StartsWith←{
+⍝ ⍺ ←→ List of items
+⍝ ⍵ ←→ prefix to search for in each item
+⍝ ← ←→ boolean mask of hits
+     (⊂,⍵)⍷(≢⍵)↑¨⍺
+ }

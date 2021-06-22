@@ -1,0 +1,9 @@
+ NewDatabaseObj←{
+⍝ ⍵ ←→ DSN,Username,Password,CS
+     db←⎕NS''
+     db.DSN←1⊃⍵
+     db.Username←2⊃⍵
+     db.Password←3⊃⍵
+     db.Options←4⊃⍵
+     db
+ }

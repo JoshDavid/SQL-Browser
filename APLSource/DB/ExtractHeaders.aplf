@@ -1,0 +1,9 @@
+ ExtractHeaders←{
+     ucase←{1(819⌶)⍵}
+     s←(u←ucase ⍵)~⎕UCS 10 13 32
+     selEnd←'SELECT'{⊃(≢⍺)+⍸⍺⍷⍵}s
+     fromStart←'FROM'{⊃⍸⍺⍷⍵}s
+     txtBetween←(selEnd-1)↓(fromStart-1)↑s
+     (,'*')≡txtBetween:ucase GetAllColNames ⍵
+     ','##.Utils.Split txtBetween
+ }
