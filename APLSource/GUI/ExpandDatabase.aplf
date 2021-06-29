@@ -3,9 +3,10 @@
 ⍝ ⍵ ←→ (tree obj)(config obj)
 ⍝ ⍺ ←→ item, which is the connection name
      t c←⍵
-     s←c t ##.DB.Connect ⍺
-     s≡¯1:''
      oldCursor←t SetCursor'Wait'
+     s←c t ##.DB.Connect ⍺
+     ResetCursor←{t SetCursor oldCursor}
+     s≡¯1:ResetCursor''
      schemas tables←↓⍉##.DB.GetTables ⍺
      dMat←schemas{(1 2⍴⍺,1)(⍵,(⍤¯1)2)}⌸tables
      items←t.Items
@@ -14,5 +15,5 @@
      cItems←⊃,/{⍵[;1]}¨,dMat
      cDepths←∊{⍵[;2]}¨,dMat
      t.(Items Depth)←cItems cDepths{(start↑⍵),⍺,(start↓⍵)}¨items depths
-     t SetCursor oldCursor
+     ResetCursor''
  }
