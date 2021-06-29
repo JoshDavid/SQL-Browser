@@ -1,0 +1,10 @@
+ SetCursor←{
+⍝ ⍺ ←→ GUI object
+⍝ ⍵ ←→ new State number, or 'Wait'
+⍝ ← ←→ old cursor
+     ⎕IO←0
+     b←'wait'≡##.Utils.Lowercase ⍵
+     w←1 ⍝ Defined in GUI docs
+     s←b⊃⍵ w
+     ⍺.⎕WS'CursorObj's
+ }

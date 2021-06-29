@@ -3,7 +3,8 @@
  ⍝ ⍺ ←→ config settings
      f←⍵.##
      connections←f ListDatabases ⍺
-     tree←⍎'tree'⍵.⎕WC'TreeView'('Size' 100 100)('Posn' 0 0)('Attach' 'Top' 'Left' 'Bottom' 'Right')
+     tree←⍎'tree'⍵.⎕WC'TreeView'('Attach' 'Top' 'Left' 'Bottom' 'Right')
+     _←Fullsize tree
      depths←(≢connections)⍴0
      tree.Items←connections
      tree.Depth←depths
