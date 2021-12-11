@@ -4,11 +4,9 @@
      query←⊃{⍺,' ',⍵}/(session.edit.Text)
      headers←ExtractHeaders query
      r←##.SQA.Do CurrentConnection query
-     dbError←0≠⊃r
-     dbError:DisplayOdbcError r
-     table←⊃3⊃r
-     grid←session.##.##.output.grid ⍝ REVISIT, create ParentForm fn
+     ~IsSuccesful⊃r:DisplayOdbcError r
+     grid←(##.GUI.GetParentForm session).output.grid
      grid.ColTitles←headers
-     grid.Values←table
+     grid.Values←⊃3⊃r
      ##.GUI.AutoSizeCols grid
  }

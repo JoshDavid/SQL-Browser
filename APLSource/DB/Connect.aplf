@@ -3,10 +3,9 @@
  ⍝ ⍺ ←→ config obj
      c t←⍺
      status←⊃##.SQA.Describe ⍵
-     isConnected←status≠1
-     isConnected:status
+     IsSuccesful status:status
      p←c ##.Config.GetConnectionParameters ⍵
      status←##.SQA.Connect p
-     0≠⊃status:DisplayOdbcError status
+     ~IsSuccesful status:DisplayOdbcError status
      t ##.GUI.AddConnectionTab ⍵
  }

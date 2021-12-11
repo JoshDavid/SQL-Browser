@@ -1,0 +1,5 @@
+ IsSuccesful←{
+⍝ ⍵ ←→ status number
+⍝ Treat non-fatal warnings (¯1) as a success
+     ⍵<1
+ }
