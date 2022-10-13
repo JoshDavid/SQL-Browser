@@ -1,4 +1,9 @@
-# SQL-Browser Release 0.0.2                    
+# SQL-Browser Release 0.0.3                    
+1. Allow connect on warnings
+2. new EG version
+3. Create LICENSE
+
+# SQL-Browser Release 0.0.2 2021-06-29 21:56:06
 1. Wait cursor changes
 2. Set wait cursor on DB Connect (Issue #4)
 3. Create .gitattributes
