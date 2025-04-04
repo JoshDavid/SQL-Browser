@@ -1,4 +1,8 @@
-# SQL-Browser Release 0.0.3                    
+# SQL-Browser Release 0.0.4                    
+1. print output result variable name after save
+2. update case convert functions
+
+# SQL-Browser Release 0.0.3 2022-10-13 11:46:54
 1. Allow connect on warnings
 2. new EG version
 3. Create LICENSE
